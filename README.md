@@ -29,7 +29,7 @@ kubectl create rolebinding jenkins-admin-binding --clusterrole=admin --serviceac
 ```
 
 
-##### Jenkins Pipe
+##### Jenkins Kaniko CI & HELM CD Pipe
 ```jenkins-pipe
 kubectl create ns hello
 kubectl create rolebinding jenkins-admin-binding --clusterrole=admin --serviceaccount=jenkins:jenkins --namespace=hello
