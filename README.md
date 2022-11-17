@@ -10,7 +10,29 @@
 - https://github.com/quickbooks2018/terraform-aws-eks
 
 
-##### GCP
+##### Jenkins Setup on GCP GKE Cluster
+```jenkins-gke
+helm repo add jenkinsci https://charts.jenkins.io
+helm repo update
+helm install jenkins --namespace jenkins --create-namespace jenkinsci/jenkins
+
+
+# Set up port forwarding to the Jenkins UI from Cloud Shell
+kubectl -n jenkins port-forward svc/jenkins --address 0.0.0.0 8090:8080
+
+# Jenkins Secrets
+
+kubectl get secrets -n jenkins 
+
+kubectl get secrets/jenkins -n jenkins -o yaml
+
+jenkins-admin-password: b1NuY1NpWmdnR25ZemtuNWx5Mnl0NQ==
+jenkins-admin-user: YWRtaW4=
+
+echo -n 'b1NuY1NpWmdnR25ZemtuNWx5Mnl0NQ==' | base64 -d
+oSncSiZggGnYzkn5ly2yt5
+```
+
 
 
 ### Jenkins Commands
