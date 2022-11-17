@@ -32,6 +32,13 @@ kubectl create rolebinding jenkins-admin-binding --clusterrole=admin --serviceac
 ##### Jenkins Kaniko CI & HELM CD Pipe
 ```jenkins-pipe
 kubectl create ns hello
-kubectl create rolebinding jenkins-admin-binding --clusterrole=admin --serviceaccount=jenkins:jenkins --namespace=hello
 kubectl create rolebinding jenkins-admin-binding --clusterrole=admin --serviceaccount=jenkins:default --namespace=hello
+```
+
+
+##### HELM CD deployment to AWS EKS
+```
+export AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE
+export AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+export AWS_DEFAULT_REGION=us-west-2
 ```
