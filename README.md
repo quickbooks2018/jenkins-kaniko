@@ -14,7 +14,7 @@
 ```jenkins-gke
 helm repo add jenkinsci https://charts.jenkins.io
 helm repo update
-helm install jenkins --namespace jenkins --create-namespace jenkinsci/jenkins
+helm install jenkins --namespace jenkins --create-namespace jenkinsci/jenkins --wait
 
 
 # Set up port forwarding to the Jenkins UI from Cloud Shell
